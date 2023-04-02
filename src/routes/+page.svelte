@@ -1,7 +1,7 @@
 <script>
   export let data;
   $: myItem = data.body.allProducts.edges;
-  $: console.log(myItem);
+  //$: console.log(myItem);
 </script>
 
 <div class="bg-blue-900/30">
@@ -10,12 +10,14 @@
     {#each myItem as product (product.node.id)}
       {#if product.node.tags.includes('novedad')}
         <div class="grid justify-items-center bg-yellow-500/30 border-yellow-500 border-4 p-2">
-          <span>{product.node.title}</span>
-          <img
-            src={product.node.images.edges[0].node.originalSrc}
-            alt={product.node.title}
-            class="w-48 h-48"
-          />
+          <a href={`/product/${product.node.handle}`} class="w-full h-full">
+            <span>{product.node.title}</span>
+            <img
+              src={product.node.images.edges[0].node.originalSrc}
+              alt={product.node.title}
+              class="w-48 h-48"
+            />
+          </a>
         </div>
       {/if}
     {:else}
