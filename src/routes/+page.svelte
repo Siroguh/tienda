@@ -2,7 +2,6 @@
   export let data;
   $: myItem = data.body.allProducts.edges;
   $: console.log(myItem);
-  import Image from 'svimg';
 </script>
 
 <div class="bg-blue-900/30">
@@ -43,7 +42,6 @@
             alt={product.node.title}
             class="w-48 max-h-full"
           />
-          <Image src="a.png" width="150" alt="Avatar" class="blue-border" quality="85" blur="10" />
         </a>
       </div>
     {:else}
