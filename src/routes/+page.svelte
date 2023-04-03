@@ -1,7 +1,9 @@
 <script>
   export let data;
   $: myItem = data.body.allProducts.edges;
-  //$: console.log(myItem);
+  $: myItem2 = data.body.allCollections.edges;
+  $: console.log(myItem);
+  $: console.log(myItem2);
 </script>
 
 <div class="bg-blue-900/30">
@@ -51,22 +53,3 @@
     {/each}
   </div>
 </div>
-<!--
-<h1 class="text-4xl">FILTRADO DE PRODUCTOS AQUI ABAJO.</h1>
-<div class="grid grid-cols-4">
-  {#each myItem as product (product.node.id)}
-    {#if product.node.collections.edges[0].node.title === 'yeet'}
-      <div class="grid grid-rows-1 justify-items-center">
-        <span>{product.node.title}</span>
-        <img
-          src={product.node.images.edges[0].node.originalSrc}
-          alt={product.node.title}
-          class="w-48 h-48"
-        />
-      </div>
-    {/if}
-  {:else}
-    <p>No products :(</p>
-  {/each}
-</div>
--->
