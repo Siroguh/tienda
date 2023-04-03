@@ -4,29 +4,16 @@ import { error } from '@sveltejs/kit';
 
 export async function load() {
   const res = await getAllProducts();
-  //const res2 = await getAllCollections();
+  const res2 = await getAllCollections();
 
-  if (res.status === 200) {
+  if (res.status === 200 || res2.status === 200) {
     const allProducts = res.body?.data.products;
+    const allCollections = res2.body?.data.collections;
 
-    if (allProducts) {
-      return {
-        body: { allProducts }
-      };
-    }
-
-    throw error(404)
-  }  else {
-    throw error(res.status)
+    return {
+      body: { allProducts, allCollections }
+    };
   }
-  //if (res2.status === 200) {
-  //  const products = res2.body?.data?.collections?.edges;
-//
-  //  if (products) {
-  //    return { products };
-  //  }
-  //  throw error(404);
-  //} else {
-  //  throw error(res.status);
-  //}
+
+  throw error(404);
 }
