@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "/C:/Users/Siroguh/Documents/Sites/blog": true,
+    ".svelte-kit": true,
+    ".vscode": true,
+    "node_modules": true
+  }
+}

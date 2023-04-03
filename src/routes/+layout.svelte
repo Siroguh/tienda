@@ -1,6 +1,8 @@
 <script>
   import '@unocss/reset/antfu.css';
+  import 'uno.css';
   import Header from '$components/Header.svelte';
+  /*
   import ShoppingCart from '$components/ShoppingCart.svelte';
   import { getCartItems } from '../store';
   import { onMount } from 'svelte';
@@ -90,9 +92,12 @@
     });
     await loadCart();
     loading = false;
-  }
+  }*/
 </script>
 
+<Header />
+<slot />
+<!--
 <main class={`${showCart ? 'h-screen' : 'min-h-screen'} text-white overflow-hidden`}>
   {#if showCart}
     <ShoppingCart
@@ -109,3 +114,4 @@
     <slot />
   </div>
 </main>
+-->

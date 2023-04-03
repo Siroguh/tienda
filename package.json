@@ -15,6 +15,7 @@
     "@iconify-json/mdi": "^1.1.50",
     "@sveltejs/adapter-auto": "2.0.0",
     "@sveltejs/kit": "1.5.0",
+    "@unocss/core": "^0.50.6",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "8.6.0",

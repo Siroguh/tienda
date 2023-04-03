@@ -166,7 +166,7 @@
               <GridTile
                 removeLabels={true}
                 imageSrc={product.node.images.edges[0].node.originalSrc}
-                href={`/product/${product.node.handle}`}
+                href={`/productos/${product.node.handle}`}
               />
             </div>
           </li>

@@ -2,10 +2,17 @@
   export let data;
   $: myItem = data.body.allProducts.edges;
   $: myItem2 = data.body.allCollections.edges;
-  $: console.log(myItem);
-  $: console.log(myItem2);
 </script>
 
+<div class="w-full h-670px max-w-1440px m-auto px-60px bg-red-500/20">
+  <img
+    alt="Medios Centros de Jamón Curado deshuesado"
+    src="https://jamonesvillarroya.com/_next/image?url=%2Fimg%2Fcentro_deshuesado_mostrado.png&w=750&q=70"
+    class="object-bottom object-cover"
+  />
+</div>
+
+<!--
 <div class="bg-blue-900/30">
   <div class="grid grid-flow-col items-center justify-start justify-items-center gap-8 p-4">
     <span class="text-4xl">NOVEDADES -></span>
@@ -53,3 +60,47 @@
     {/each}
   </div>
 </div>
+-->
+
+<section class="px-[20px] sm:px-[30px] lg:px-[60px] xl:px-[80px]">
+  <div
+    class="relative mt-[50px] lg:mt-[180px] lg:grid lg:grid-flow-col lg:grid-cols-2 lg:items-center font-canela"
+  >
+    <div class="overflow-hidden">
+      <a
+        class="block relative w-full lg:w-[525px] h-[525px] vsm:h-[800px] sm:h-[975px] md:h-[1225px] lg:h-[735px] lg:justify-self-start"
+        href="/productos/iberico-cebo"
+        ><span
+          style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px none; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
+          ><img
+            alt="Jamón Curado Ibérico de Cebo de Jamones Villarroya"
+            src="https://jamonesvillarroya.com/_next/image?url=%2Fimg%2Fiberico_cebo.jpg&w=640&q=50"
+          />
+        </span></a
+      >
+    </div>
+    <div class="w-full lg:px-[80px] text-rojo">
+      <h3 class="relative pt-[15px] lg:pt-0 text-35px text-negro">
+        <span
+          class="hidden lg:block absolute w-[200px] h-px top-[45%] left-[-215px] bg-negro z-40"
+        />Jamón Ibérico de Cebo
+      </h3>
+      <p class="text-22d leading-relaxed lg:py-4">
+        Elaborado con animales de raza ibérica 50% criados en Córdoba. Cada pieza pasa por las manos
+        de nuestros maestros jamoneros y se afina en nuestro secadero natural durante dos cálidos
+        veranos, reproduciendo las condiciones del clima del sur de España.
+      </p>
+      <span class="block text-16d pt-[15px] uppercase">Preparados:</span>
+      <ul class="w-[200px] grid grid-cols-2 grid-rows-2">
+        <li>· Centro</li>
+        <li>· Contra</li>
+        <li>· Maza</li>
+        <li>· Punta</li>
+      </ul>
+      <a
+        class="w-[150px] h-[70px] mt-[20px] grid place-items-center text-15d text-rojo leading-[70px] uppercase border border-rojo rounded-50 transition-all hover:bg-red-500 hover:text-white"
+        href="/productos/iberico-cebo">Saber más</a
+      >
+    </div>
+  </div>
+</section>

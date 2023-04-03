@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import UnoCSS from "unocss/vite";
+import { extractorSvelte } from '@unocss/core'
 import presetUno from "@unocss/preset-uno";
 import presetIcons from '@unocss/preset-icons'
 
@@ -7,7 +8,8 @@ import presetIcons from '@unocss/preset-icons'
 const config = {
   plugins: [
     UnoCSS({
-      mode: 'svelte-scoped',
+      configFile: 'uno.config.ts',
+      extractors: [extractorSvelte],
       presets: [
         presetUno(),
         presetIcons({
