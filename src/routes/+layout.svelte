@@ -118,12 +118,3 @@
   </div>
 </main>
 -->
-<style global>
-  @font-face {
-    font-family: 'canela';
-    src: url('fonts/Canela-Light.otf');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-</style>
