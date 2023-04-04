@@ -2,6 +2,7 @@
   import '@unocss/reset/antfu.css';
   import 'uno.css';
   import Header from '$components/Header.svelte';
+  import OnLoad from '$components/tech/OnLoad.svelte';
   /*
   import ShoppingCart from '$components/ShoppingCart.svelte';
   import { getCartItems } from '../store';
@@ -96,7 +97,9 @@
 </script>
 
 <Header />
+
 <slot />
+
 <!--
 <main class={`${showCart ? 'h-screen' : 'min-h-screen'} text-white overflow-hidden`}>
   {#if showCart}
@@ -115,3 +118,12 @@
   </div>
 </main>
 -->
+<style global>
+  @font-face {
+    font-family: 'canela';
+    src: url('fonts/Canela-Light.otf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
