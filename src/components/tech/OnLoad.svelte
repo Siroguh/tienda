@@ -16,7 +16,7 @@
 
 {#if animate}
   {#if loaded}
-    <div in:fade={{ delay: caca, duration: vaca }}>
+    <div in:fade={{ delay: caca, duration: vaca }} class="w-full h-full">
       <slot />
     </div>
   {/if}

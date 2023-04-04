@@ -2,7 +2,6 @@
   import '@unocss/reset/antfu.css';
   import 'uno.css';
   import Header from '$components/Header.svelte';
-  import OnLoad from '$components/tech/OnLoad.svelte';
   /*
   import ShoppingCart from '$components/ShoppingCart.svelte';
   import { getCartItems } from '../store';

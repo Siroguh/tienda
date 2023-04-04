@@ -8,11 +8,11 @@
   //$: console.log(allProducts);
 </script>
 
-<OnLoad caca="0" vaca="1000">
-  <main class="w-full max-w-1440px grid px-20px mt-100px" in:fade={{ delay: 500, duration: 500 }}>
+<main class="w-full max-w-1440px grid px-20px mt-100px" in:fade={{ delay: 500, duration: 500 }}>
+  <OnLoad caca="100" vaca="500">
     {#each allCollections as products (products.node.handle)}
       {#if products.node.handle.includes('jamones-enteros')}
-        {#each allProducts as product (product.node.id)}
+        {#each allProducts as product, index (product.node.id)}
           {#if product.node.tags.includes('novedad')}
             {#if product.node.handle.includes('iberico-cebo')}
               <Entero
@@ -54,8 +54,9 @@
         {/each}
       {/if}
     {/each}
-  </main>
-</OnLoad>
+  </OnLoad>
+</main>
+
 <!--
 
 <div class="grid justify-items-center bg-yellow-500/30 border-yellow-500 border-4 p-2">
