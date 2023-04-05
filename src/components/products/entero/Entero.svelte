@@ -15,9 +15,9 @@
   <div>
     <h2 class="pt-15px font-canela text-8.75 text-negro">{productTitle}</h2>
     <p class="text-rojo font-canela text-5.5">{description}</p>
-    <div class="text-rojo font-canela">
-      <span class="block text-16px pt-15px uppercase">Preparados:</span>
-      <ul class="w-200px grid grid-cols-2 grid-rows-2">
+    <div class="text-rojo font-canela grid grid-cols-2">
+      <span class="block text-16px pt-15px uppercase col-span-2">Preparados:</span>
+      <ul class="w-200px grid grid-cols-2 grid-rows-2 col-span-2">
         <li>· Centro</li>
         <li>· Contra</li>
         <li>· Maza</li>
@@ -25,10 +25,16 @@
       </ul>
       <a
         {href}
-        class="w-[150px] h-[70px] mt-[20px] grid place-items-center text-15d text-rojo leading-[70px] uppercase border border-rojo rounded-50p transition-all hover:bg-rojo hover:text-white"
+        class="w-[150px] h-[70px] mt-[20px] grid col-span-1 place-items-center justify-self-left text-15d text-rojo leading-[70px] uppercase border border-rojo rounded-50p transition-all hover:bg-rojo hover:text-white"
         data-sveltekit-preload-code="viewport"
       >
         Saber más
+      </a>
+      <a
+        {href}
+        class="w-fit h-50px grid place-items-center justify-self-center mt-[30px] p-2 uppercase text-white leading-37px border border-rojo rounded-4 bg-rojo hover:bg-white hover:text-rojo transition-all duration-150"
+      >
+        Comprar ya
       </a>
     </div>
   </div>
