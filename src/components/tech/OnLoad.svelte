@@ -12,12 +12,17 @@
   });
   export let caca;
   export let vaca;
+  export let loading;
 </script>
 
 {#if animate}
   {#if loaded}
     <div in:fade={{ delay: caca, duration: vaca }} class="w-full h-full">
       <slot />
+    </div>
+  {:else if loading}
+    <div class="w-screen h-screen absolute inset-0 grid justify-center items-center">
+      <img src="/loading.gif" alt="" />
     </div>
   {/if}
 {:else}

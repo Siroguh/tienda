@@ -9,7 +9,7 @@
 </script>
 
 <main class="w-full max-w-1440px grid px-20px mt-100px" in:fade={{ delay: 500, duration: 500 }}>
-  <OnLoad caca="100" vaca="500">
+  <OnLoad caca="100" vaca="500" loading>
     {#each allCollections as products (products.node.handle)}
       {#if products.node.handle.includes('jamones-enteros')}
         {#each allProducts as product, index (product.node.id)}
