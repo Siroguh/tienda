@@ -1,3 +1,4 @@
+<!--
 <script>
   import { cartQuantity } from '../store';
   import SearchBar from '$components/SearchBar.svelte';
@@ -15,7 +16,7 @@
 
   <button class="relative my-2 mx-4 w-52 border border-white grid grid-flow-col gap-4 items-center">
     CART: {$cartQuantity}
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <span class="font-sans text-xs" on:click={openCart}>X click me X</span>
   </button>
 </div>
+-->

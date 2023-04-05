@@ -17,11 +17,18 @@
 
 {#if animate}
   {#if loaded}
-    <div in:fade={{ delay: caca, duration: vaca }} class="w-full h-full">
+    <div
+      in:fade={{ delay: caca, duration: vaca }}
+      out:fade={{ delay: caca, duration: vaca }}
+      class="w-full h-full"
+    >
       <slot />
     </div>
   {:else if loading}
-    <div class="w-screen h-screen absolute inset-0 grid justify-center items-center">
+    <div
+      in:fade={{ delay: caca, duration: vaca }}
+      class="w-screen h-screen absolute inset-0 grid justify-center items-center bg-white/75"
+    >
       <img src="/loading.gif" alt="" />
     </div>
   {/if}

@@ -32,9 +32,10 @@
       </a>
       <a
         {href}
-        class="w-fit h-50px grid place-items-center justify-self-center mt-[30px] p-2 uppercase text-white leading-37px border border-rojo rounded-4 bg-rojo hover:bg-white hover:text-rojo transition-all duration-150"
+        class="w-fit h-50px mt-30px p-3 grid grid-flow-col gap-2 items-center place-items-center justify-self-center uppercase text-white border border-rojo rounded-4 bg-rojo hover:bg-white hover:text-rojo transition-all duration-150 font-sans"
       >
-        Comprar ya
+        <span>Compralo ya</span>
+        <div class="i-tabler-hand-click w-25px h-25px" />
       </a>
     </div>
   </div>

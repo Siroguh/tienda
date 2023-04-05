@@ -97,8 +97,9 @@
 
 <Header />
 
-<slot />
-
+<div class="mt-100px">
+  <slot />
+</div>
 <!--
 <main class={`${showCart ? 'h-screen' : 'min-h-screen'} text-white overflow-hidden`}>
   {#if showCart}
