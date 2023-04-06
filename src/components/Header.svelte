@@ -35,9 +35,15 @@
 
 <MediaQuery query="(max-width: 799px)" let:matches>
   {#if matches}
-    <header class="w-full h-100px fixed bg-white z-15">
+    <header class="w-full h-fit fixed bg-white z-15">
       <OnLoad caca="100" vaca="500">
-        <nav class="w-inherit h-inherit relative">
+        <div
+          class="w-full h-50px grid grid-flow-col items-center justify-center gap-x-4 font-canela text-white bg-rojo"
+        >
+          <p class="pt-5px">ENVÍO DE JAMONES A TODA LA PENÍNSULA</p>
+          <div class="i-ic-twotone-local-shipping" />
+        </div>
+        <nav class="w-inherit h-100px relative">
           <div class="w-full h-inherit flex flex-row items-center px-20px z-11">
             <div class="pb-10px z-12">
               <h1>

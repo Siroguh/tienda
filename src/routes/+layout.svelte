@@ -97,7 +97,7 @@
 
 <Header />
 
-<div class="mt-100px">
+<div class="mt-150px">
   <slot />
 </div>
 <!--
