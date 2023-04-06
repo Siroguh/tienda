@@ -1,15 +1,5 @@
-<script>
-  import { fade } from 'svelte/transition';
-  import Hero from '$components/Hero.svelte';
-  import Entero from '$components/products/entero/Entero.svelte';
-  import Charcuteria from '$components/products/charcuteria/Charcuteria.svelte';
-  import Otros from '$components/products/otros/Otros.svelte';
-  //import OnLoad from '$components/tech/OnLoad.svelte';
-  export let data;
-  $: allProducts = data.body.allProducts.edges;
-  //$: allCollections = data.body.allCollections.edges;
-  //$: console.log(allProducts);
-</script>
+<!--
+<Charcuteria {allProducts2} />
 
 <Hero src="centro_deshuesado_mostrado.webp" alt="Medios Centros de Jamón Curado deshuesado" />
 
@@ -91,65 +81,66 @@
   </p>
 </div>
 
-<main class="w-full max-w-1440px px-20px grid">
-  <!--
+<main class="w-full max-w-1440px px-20px grid" in:fade={{ delay: 50, duration: 500 }}>
+  <OnLoad caca="50" vaca="200" loading>
     {#each allCollections as products (products.node.handle)}
       {#if products.node.handle.includes('jamones-enteros')}
-      -->
-  {#each allProducts as product (product.node.id)}
-    {#if product.node.tags.includes('novedad')}
-      {#if product.node.handle.includes('iberico-cebo')}
-        <Entero
-          href={`/productos/${product.node.handle}`}
-          description={product.node.description}
-          direction="order-1"
-          src={product.node.images.edges[0].node.originalSrc}
-          productTitle={product.node.title}
-        />
-      {/if}
-      {#if product.node.handle.includes('duroc')}
-        <Entero
-          href={`/productos/${product.node.handle}`}
-          description={product.node.description}
-          direction="order-2"
-          src={product.node.images.edges[0].node.originalSrc}
-          productTitle={product.node.title}
-        />
-      {/if}
-      {#if product.node.handle.includes('gran-reserva')}
-        <Entero
-          href={`/productos/${product.node.handle}`}
-          description={product.node.description}
-          direction="order-3"
-          src={product.node.images.edges[0].node.originalSrc}
-          productTitle={product.node.title}
-        />
-      {/if}
-      {#if product.node.handle.includes('entero')}
-        <Entero
-          href={`/productos/${product.node.handle}`}
-          description={product.node.description}
-          direction="order-4"
-          src={product.node.images.edges[0].node.originalSrc}
-          productTitle={product.node.title}
-        />
-      {/if}
-    {/if}
-  {/each}
-  <!--
+        {#each allProducts as product (product.node.id)}
+          {#if product.node.tags.includes('novedad')}
+            {#if product.node.handle.includes('iberico-cebo')}
+              <Entero
+                href={`/productos/${product.node.handle}`}
+                description={product.node.description}
+                direction="order-1"
+                src={product.node.images.edges[0].node.originalSrc}
+                productTitle={product.node.title}
+              />
+            {/if}
+            {#if product.node.handle.includes('duroc')}
+              <Entero
+                href={`/productos/${product.node.handle}`}
+                description={product.node.description}
+                direction="order-2"
+                src={product.node.images.edges[0].node.originalSrc}
+                productTitle={product.node.title}
+              />
+            {/if}
+            {#if product.node.handle.includes('gran-reserva')}
+              <Entero
+                href={`/productos/${product.node.handle}`}
+                description={product.node.description}
+                direction="order-3"
+                src={product.node.images.edges[0].node.originalSrc}
+                productTitle={product.node.title}
+              />
+            {/if}
+            {#if product.node.handle.includes('entero')}
+              <Entero
+                href={`/productos/${product.node.handle}`}
+                description={product.node.description}
+                direction="order-4"
+                src={product.node.images.edges[0].node.originalSrc}
+                productTitle={product.node.title}
+              />
+            {/if}
+          {/if}
+        {/each}
       {/if}
     {/each}
-    -->
+  </OnLoad>
 </main>
 
-<div class="w-full max-w-1440px px-20px font-canela" in:fade={{ delay: 50, duration: 500 }}>
-  <h2
-    class="w-fit min-w-200px m-auto pt-10 pb-6 relative text-center font-canela uppercase text-negro"
-  >
-    Otros Productos
-    <span class="w-1.5/4 h-px my-4 m-auto block bg-negro" />
-  </h2>
-  <Otros {allProducts} />
+<!--
+
+<div class="grid justify-items-center bg-yellow-500/30 border-yellow-500 border-4 p-2">
+  <a href={`/product/${product.node.handle}`} class="w-full h-full">
+    <span>{product.node.title}</span>
+    <img
+      src={product.node.images.edges[0].node.originalSrc}
+      alt={product.node.title}
+      class="w-48 h-48"
+    />
+  </a>
 </div>
 
-<Charcuteria {allProducts} />
+-->

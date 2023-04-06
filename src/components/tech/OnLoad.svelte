@@ -1,4 +1,22 @@
 <script>
+  /**
+   * Mounts a component when the DOM is ready.  Useful for intro animations.
+   */
+  import { onMount } from 'svelte';
+  let loaded;
+  onMount(() => {
+    loaded = true;
+  });
+</script>
+
+{#if loaded}
+  <slot />
+{/if}
+
+<!--
+
+
+  <script>
   import { fade } from 'svelte/transition';
   import { navigating } from '$app/stores';
   import { onMount } from 'svelte';
@@ -35,3 +53,6 @@
 {:else}
   <slot />
 {/if}
+
+
+-->

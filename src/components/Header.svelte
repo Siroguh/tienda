@@ -269,9 +269,8 @@
                     <div class="{clase} w-20px" />
                     <a
                       {href}
-                      class:bg-red-500={routeId == href}
-                      class:z-10={routeId == href}
-                      class:uppercase={routeId == href}
+                      class:underline={routeId == href}
+                      class:opacity-80={routeId == href}
                       {title}
                     >
                       {title}
@@ -285,9 +284,8 @@
                     <div class="{clase} w-20px" />
                     <a
                       {href}
-                      class:bg-red-500={routeId == href}
-                      class:z-10={routeId == href}
-                      class:uppercase={routeId == href}
+                      class:underline={routeId == href}
+                      class:opacity-80={routeId == href}
                       {title}
                     >
                       {title}
