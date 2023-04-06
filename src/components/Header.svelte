@@ -37,12 +37,13 @@
   {#if matches}
     <header class="w-full h-fit fixed bg-white z-15">
       <OnLoad caca="100" vaca="500">
-        <div
-          class="w-full h-50px grid grid-flow-col items-center justify-center gap-x-4 font-canela text-white bg-rojo"
+        <a
+          href="/"
+          class="w-full h-40px grid grid-flow-col items-center justify-center gap-x-4 font-canela text-white bg-rojo"
         >
           <p class="pt-5px">ENVÍO DE JAMONES A TODA LA PENÍNSULA</p>
           <div class="i-ic-twotone-local-shipping" />
-        </div>
+        </a>
         <nav class="w-inherit h-100px relative">
           <div class="w-full h-inherit flex flex-row items-center px-20px z-11">
             <div class="pb-10px z-12">

@@ -106,3 +106,9 @@
     </div>
   </div>
 </section>
+
+<div>
+  ENVÍO GRATIS Envío gratis a partir de 80€ en Zaragoza. <br />Envío gratis a partir de 100€ en
+  Península.<br />
+  Recogida en tienda gratis + código descuento 5% para próxima compra.
+</div>
