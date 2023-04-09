@@ -5,7 +5,6 @@
   import MediaQuery from '$components/tech/MediaQuery.svelte';
   import { Hamburger } from 'svelte-hamburgers';
 
-  import OnLoad from '$components/tech/OnLoad.svelte';
 
   const navs1 = [
     { title: 'tienda', href: '/tienda', clase: 'i-mdi-shopping' },
@@ -36,17 +35,17 @@
 <MediaQuery query="(max-width: 799px)" let:matches>
   {#if matches}
     <header class="w-full h-fit fixed bg-white z-15">
-      <OnLoad caca="100" vaca="500">
         <a
           href="/"
-          class="w-full h-40px grid grid-flow-col items-center justify-center gap-x-4 font-canela text-white bg-rojo"
+          class="w-full h-40px grid grid-flow-col items-center justify-center gap-x-4 font-canela text-white bg-gradient-to-r from-red-500 via-red-600 to-red-600"
         >
           <p class="pt-5px">ENVÍO DE JAMONES A TODA LA PENÍNSULA</p>
           <div class="i-ic-twotone-local-shipping" />
         </a>
         <nav class="w-inherit h-100px relative">
           <div class="w-full h-inherit flex flex-row items-center px-20px z-11">
-            <div class="pb-10px z-12">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <div class="pb-10px z-12" on:click|once={() => open = false}>
               <h1>
                 <a href="/">
                   <svg
@@ -247,6 +246,7 @@
                 </a>
               </h1>
             </div>
+            <a href='/' class='w-35px h-35px absolute top-31px right-85px grid items-center justify-center text-rojo rounded-full z-14 {open === true ? '!text-white' : ''}' on:click|once={() => open = false}><div class='i-mdi-shopping w-25px h-25px'/></a>
             <div class="absolute z-12 top-20px right-20px">
               <Hamburger
                 bind:open
@@ -279,6 +279,7 @@
                       class:underline={routeId == href}
                       class:opacity-80={routeId == href}
                       {title}
+                      on:click|once={() => open = false}
                     >
                       {title}
                     </a>
@@ -294,6 +295,7 @@
                       class:underline={routeId == href}
                       class:opacity-80={routeId == href}
                       {title}
+                      on:click|once={() => open = false}
                     >
                       {title}
                     </a>
@@ -304,14 +306,12 @@
           {/if}
           <slot />
         </nav>
-      </OnLoad>
     </header>
   {/if}
 </MediaQuery>
 <MediaQuery query="(min-width: 799px)" let:matches>
   {#if matches}
     <header class="h-130px w-full bg-red-500/10">
-      <OnLoad caca="100" vaca="500">
         <nav class="h-inherit w-inherit max-w-1440px m-auto px-60px">
           <ul class="h-inherit w-full grid grid-flow-col justify-between items-center">
             {#each navs1 as { title, href }}
@@ -587,7 +587,6 @@
             {/each}
           </ul>
         </nav>
-      </OnLoad>
     </header>
   {/if}
 </MediaQuery>

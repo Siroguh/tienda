@@ -31,7 +31,7 @@ export async function shopifyFetch({ query, variables }) {
 export async function getAllProducts() {
   return shopifyFetch({
     query: `{
-      products(sortKey: TITLE, first: 100) {
+      products(sortKey: CREATED_AT, first: 100) {
         edges {
           node {
             id
@@ -111,6 +111,91 @@ export async function getAllProducts() {
     }`
   });
 }
+
+export async function getAllJamones() {
+  return shopifyFetch({
+    query: `{
+      products(sortKey: CREATED_AT, first: 100, query: "title:Jamón*") {
+        edges {
+          node {
+            id
+            handle
+            availableForSale
+            title
+            description
+            descriptionHtml
+            productType
+            tags
+            collections (first: 100){
+              edges{
+                node{
+                  title
+                }
+              }
+            }
+            options {
+              id
+              name
+              values
+            }
+            priceRange {
+              maxVariantPrice {
+                amount
+                currencyCode
+              }
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+            }
+            variants(first: 250) {
+              pageInfo {
+                hasNextPage
+                hasPreviousPage
+              }
+              edges {
+                node {
+                  id
+                  title
+                  sku
+                  availableForSale
+                  requiresShipping
+                  selectedOptions {
+                    name
+                    value
+                  }
+                  priceV2 {
+                    amount
+                    currencyCode
+                  }
+                  compareAtPriceV2 {
+                    amount
+                    currencyCode
+                  }
+                }
+              }
+            }
+            images(first: 20) {
+              pageInfo {
+                hasNextPage
+                hasPreviousPage
+              }
+              edges {
+                node {
+                  originalSrc
+                  altText
+                  width
+                  height
+                }
+              }
+            }
+          }
+        }
+      }
+    }`
+  });
+}
+
 
 export async function getAllCollections() {
   return shopifyFetch({

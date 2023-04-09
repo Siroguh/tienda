@@ -2,6 +2,7 @@
   import '@unocss/reset/antfu.css';
   import 'uno.css';
   import Header from '$components/Header.svelte';
+  import Footer from '$components/Footer.svelte';
   /*
   import ShoppingCart from '$components/ShoppingCart.svelte';
   import { getCartItems } from '../store';
@@ -100,6 +101,8 @@
 <div class="mt-140px">
   <slot />
 </div>
+
+<Footer/>
 <!--
 <main class={`${showCart ? 'h-screen' : 'min-h-screen'} text-white overflow-hidden`}>
   {#if showCart}

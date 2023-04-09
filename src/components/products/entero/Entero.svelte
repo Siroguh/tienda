@@ -16,7 +16,7 @@
     <h2 class="pt-15px font-canela text-8.75 text-negro">{productTitle}</h2>
     <p class="text-rojo font-canela text-5.5">{description}</p>
     <div class="text-rojo font-canela grid grid-cols-2">
-      <span class="block text-16px pt-15px uppercase col-span-2">Preparados:</span>
+      <span class="block text-4 pt-15px uppercase col-span-2">Preparados:</span>
       <ul class="w-200px grid grid-cols-2 grid-rows-2 col-span-2 text-5">
         <li>· Centro</li>
         <li>· Contra</li>

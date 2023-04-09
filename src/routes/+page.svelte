@@ -7,7 +7,9 @@
   //import OnLoad from '$components/tech/OnLoad.svelte';
   export let data;
   $: allProducts = data.body.allProducts.edges;
-  //$: allCollections = data.body.allCollections.edges;
+  $: allCollections = data.body.allCollections.edges;
+  //
+  $: allJamones = data.body.allJamones.edges;
   //$: console.log(allProducts);
 </script>
 
@@ -19,7 +21,7 @@
     width="145.648"
     height="119.287"
     viewBox="0 0 145.648 119.287"
-    class="h-[95px]"
+    class="h-95px"
     ><g id="Grupo_671" data-name="Grupo 671" transform="translate(-904.873 -1413.932)"
       ><g id="Grupo_670" data-name="Grupo 670" transform="translate(904.873 1413.932)"
         ><path
@@ -84,7 +86,7 @@
     Nuestros productos
     <span class="w-1.5/4 h-px my-4 m-auto block bg-negro" />
   </h2>
-  <p class="w-full pt-2 text-center text-25px text-rojo">
+  <p class="w-full pt-2 text-center text-6.25 text-rojo">
     Somos expertos en el curado de jamones y su deshuesado. Trabajamos con distribuidores
     especializados tanto a nivel nacional como internacional, ofreciendo distintos cortes y
     presentaciones adaptados a cada cliente.
@@ -92,54 +94,14 @@
 </div>
 
 <main class="w-full max-w-1440px px-20px grid">
-  <!--
-    {#each allCollections as products (products.node.handle)}
-      {#if products.node.handle.includes('jamones-enteros')}
-      -->
-  {#each allProducts as product (product.node.id)}
-    {#if product.node.tags.includes('novedad')}
-      {#if product.node.handle.includes('iberico-cebo')}
-        <Entero
-          href={`/productos/${product.node.handle}`}
-          description={product.node.description}
-          direction="order-1"
-          src={product.node.images.edges[0].node.originalSrc}
-          productTitle={product.node.title}
-        />
-      {/if}
-      {#if product.node.handle.includes('duroc')}
-        <Entero
-          href={`/productos/${product.node.handle}`}
-          description={product.node.description}
-          direction="order-2"
-          src={product.node.images.edges[0].node.originalSrc}
-          productTitle={product.node.title}
-        />
-      {/if}
-      {#if product.node.handle.includes('gran-reserva')}
-        <Entero
-          href={`/productos/${product.node.handle}`}
-          description={product.node.description}
-          direction="order-3"
-          src={product.node.images.edges[0].node.originalSrc}
-          productTitle={product.node.title}
-        />
-      {/if}
-      {#if product.node.handle.includes('entero')}
-        <Entero
-          href={`/productos/${product.node.handle}`}
-          description={product.node.description}
-          direction="order-4"
-          src={product.node.images.edges[0].node.originalSrc}
-          productTitle={product.node.title}
-        />
-      {/if}
-    {/if}
+  {#each allJamones as jamones (jamones.node.handle)}
+    <Entero
+    href={`/productos/${jamones.node.handle}`}
+    description={jamones.node.description}
+    src={jamones.node.images.edges[0].node.originalSrc}
+    productTitle={jamones.node.title}
+    />
   {/each}
-  <!--
-      {/if}
-    {/each}
-    -->
 </main>
 
 <div class="w-full max-w-1440px px-20px font-canela" in:fade={{ delay: 50, duration: 500 }}>
