@@ -112,7 +112,7 @@ export async function getAllProducts() {
 export async function getAllJamones() {
   return shopifyFetch({
     query: `{
-      products(sortKey: CREATED_AT, first: 100, query: "title:Jamón") {
+      products(sortKey: CREATED_AT, first: 100, query:"title:Jamon*") {
         edges {
           node {
             id
