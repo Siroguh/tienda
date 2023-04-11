@@ -23,7 +23,7 @@
   //
   //
 
-  let open;
+   let open = false;
   $: if (browser) document.body.classList.toggle('overflow-hidden', open);
 
   //
@@ -311,7 +311,8 @@
 </MediaQuery>
 <MediaQuery query="(min-width: 799px)" let:matches>
   {#if matches}
-    <header class="h-130px w-full bg-red-500/10">
+    <header class="w-full h-130px bg-red-500/10">
+      <div class='w-inherit h-inherit'>
         <nav class="h-inherit w-inherit max-w-1440px m-auto px-60px">
           <ul class="h-inherit w-full grid grid-flow-col justify-between items-center">
             {#each navs1 as { title, href }}
@@ -587,6 +588,7 @@
             {/each}
           </ul>
         </nav>
+      </div>
     </header>
   {/if}
 </MediaQuery>

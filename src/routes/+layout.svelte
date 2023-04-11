@@ -95,14 +95,15 @@
     loading = false;
   }*/
 </script>
+<div>
+  <Header />
 
-<Header />
+  <div class="mt-140px">
+    <slot />
+  </div>
 
-<div class="mt-140px">
-  <slot />
+  <Footer/>
 </div>
-
-<Footer/>
 <!--
 <main class={`${showCart ? 'h-screen' : 'min-h-screen'} text-white overflow-hidden`}>
   {#if showCart}
