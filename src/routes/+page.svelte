@@ -8,7 +8,7 @@
   export let data;
   $: allJamones = data.body.allJamones.edges;
   $: allProducts = data.body.allProducts.edges;
-  //$: allCollections = data.body.allCollections.edges;
+  $: allCollections = data.body.allCollections.edges;
   $: console.log(allJamones);
 </script>
 
