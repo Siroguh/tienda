@@ -45,7 +45,7 @@
         <nav class="w-inherit h-100px relative">
           <div class="w-full h-inherit flex flex-row items-center px-20px z-11">
             <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <div class="pb-10px z-12" on:click|once={() => open = false}>
+            <div class="pb-10px z-12" on:click={() => open = false}>
               <h1>
                 <a href="/">
                   <svg
@@ -246,7 +246,7 @@
                 </a>
               </h1>
             </div>
-            <a href='/' class='w-35px h-35px absolute top-31px right-85px grid items-center justify-center text-rojo rounded-full z-14 {open === true ? '!text-white' : ''}' on:click|once={() => open = false}><div class='i-mdi-shopping w-25px h-25px'/></a>
+            <a href='/' class='w-35px h-35px absolute top-31px right-85px grid items-center justify-center text-rojo rounded-full z-14 {open === true ? '!text-white' : ''}' on:click={() => open = false}><div class='i-mdi-shopping w-25px h-25px'/></a>
             <div class="absolute z-12 top-20px right-20px">
               <Hamburger
                 bind:open
@@ -279,7 +279,7 @@
                       class:underline={routeId == href}
                       class:opacity-80={routeId == href}
                       {title}
-                      on:click|once={() => open = false}
+                      on:click={() => open = false}
                     >
                       {title}
                     </a>
@@ -295,7 +295,7 @@
                       class:underline={routeId == href}
                       class:opacity-80={routeId == href}
                       {title}
-                      on:click|once={() => open = false}
+                      on:click={() => open = false}
                     >
                       {title}
                     </a>
