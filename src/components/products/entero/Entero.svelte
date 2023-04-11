@@ -4,12 +4,11 @@
   export let href1;
   export let href2;
   export let description;
-  export let direction;
   export let src;
   export let productTitle;
 </script>
 
-<div class="{direction} mb-50px" in:fade={{ delay: 300, duration: 500 }}>
+<div class="mb-50px" in:fade={{ delay: 50, duration: 500 }}>
   <a href={href2} class="w-full h-full" data-sveltekit-preload-code="viewport">
     <img alt="ye" {src} class="w-inherit h-525px object-cover" />
   </a>
